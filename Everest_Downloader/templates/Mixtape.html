@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp</title>
+    <link href="{{ url_for('static', filename = '/content/style.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+          integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+
+
+</head>
+
+{% if eval == 2 %}
+<script>
+    alert('enter playlist name')
+</script>
+{% endif %}
+
+<body>
+    <div class="container">
+        <header class="wrapperhead">
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}"><b>Home</b></a></li>
+                <li><a href="{{ url_for('mixtape') }}"><b>Create Mixtape</b></a></li>
+                <li><a href="#"><b>Theme[Dark]</b></a></li>
+            </ul>
+        </header>
+        <div class="wrapper1">
+            <div class="box">
+                <form action="/add" method="post" class="form-search">
+
+                    <input type="text" class="search-txt" name="url" placeholder="Enter Name of Youtube video/link">
+                    <br>
+                    <button type="submit" class="btn">Add To Mixtape</button>
+
+                </form>
+            </div>
+
+        </div>
+
+        {% if songs %}
+        <div class="clearbox">
+            <div class="clear">
+                <a href="/mixtape/remove_all/" class="delete">Clear all</a>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% for song in songs %}
+        <div class="wrapper2">
+                <div>
+                    <a href={{ song.link }} class="songtitle">
+                        {{ song.title }}
+                    </a>
+                    <a href="/mixtape/{{ song.id }}/delete/" class="delete">
+                        Remove
+                    </a>
+                </div>
+         </div>
+         {% endfor %}
+
+        {% if songs %}
+        <div class="box" style="display: block;">
+            <form action="/create" method="post">
+                <div class="clearbox">
+                    <input type="text" placeholder="Enter directory" name="dir">
+                </div>
+                <button type="submit" class="btn" id="myBtn">Create Mixtape</button>
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+    <footer>
+        <p>Vistein payne 2021</p>
+    </footer>
+
+</body>
+
+</html>

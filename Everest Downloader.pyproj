@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>2eaa2d15-2d92-4039-b273-5c15a509dbb1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>Everest Downloader</Name>
+    <RootNamespace>Everest Downloader</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Everest_Downloader\models.py" />
+    <Compile Include="Everest_Downloader\views.py" />
+    <Compile Include="runserver.py" />
+    <Compile Include="Everest_Downloader\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Everest_Downloader\" />
+    <Folder Include="Everest_Downloader\static\" />
+    <Folder Include="Everest_Downloader\static\bg_image\" />
+    <Folder Include="Everest_Downloader\static\content\" />
+    <Folder Include="Everest_Downloader\static\fonts\" />
+    <Folder Include="Everest_Downloader\static\scripts\" />
+    <Folder Include="Everest_Downloader\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Everest_Downloader\static\bg_image\bgpics.jpg" />
+    <Content Include="Everest_Downloader\static\content\style.css" />
+    <Content Include="Everest_Downloader\templates\base.html" />
+    <Content Include="Everest_Downloader\templates\download.html" />
+    <Content Include="Everest_Downloader\templates\Mixtape.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="Everest_Downloader\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Everest_Downloader\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Everest_Downloader\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Everest_Downloader\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Everest_Downloader\static\scripts\bootstrap.js" />
+    <Content Include="Everest_Downloader\static\scripts\bootstrap.min.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery-1.10.2.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="Everest_Downloader\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery.validate.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery.validate.min.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Everest_Downloader\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Everest_Downloader\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="Everest_Downloader\static\scripts\respond.js" />
+    <Content Include="Everest_Downloader\static\scripts\respond.min.js" />
+    <Content Include="Everest_Downloader\static\scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.8</Version>
+      <Description>env (Python 3.8 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

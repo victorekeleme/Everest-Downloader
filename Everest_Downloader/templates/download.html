@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp</title>
+    <link href="{{ url_for('static', filename = '/content/style.css') }}" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <div class="container">
+        <header class="wrapperhead">
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}"><b>Home</b></a></li>
+                <li><a href="{{ url_for('mixtape') }}"><b>Create Mixtape</b></a></li>
+                <li><a href="#"><b>Theme[Dark]</b></a></li>
+            </ul>
+        </header>
+        <div class="wrapper1">
+            <div class="box">
+                <form action="/search" method="post" class="form-search">
+
+                    <input type="text" class="search-txt" name="url" placeholder="Enter Name of Youtube video/link">
+                    <br>
+                    <button type="submit" class="btn">Search</button>
+
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="wrapper2">
+                <div class="box">
+                    <h3>{{ title }}</h3>
+                    <div>
+                        <img src="{{ albumArt }}" class="albumArt" alt="albumArt">
+                    </div>
+                    <form action="/download" method="post">
+                        <div class="Opt">
+                            <button type="submit" class="btn" name="Opt" value="video">Download Mp4</button>
+                            <button type="submit" class="btn" name="Opt" value="audio">Download Mp3</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Vistein payne 2021</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp</title>
+    <link href="{{ url_for('static', filename = '/content/style.css') }}" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <div class="container">
+        <header class="wrapperhead">
+            <ul class="links">
+                <li><a href="{{ url_for('home') }}"><b>Home</b></a></li>
+                <li><a href="{{ url_for('mixtape') }}"><b>Create Mixtape</b></a></li>
+                <li><a href="#"><b>Theme[Dark]</b></a></li>
+            </ul>
+        </header>
+        <div class="wrapper1">
+            <div class="box">
+                <form action="/search" method="post" class="form-search">
+
+                    <input type="text" class="search-txt" name="url" placeholder="Enter Name of Youtube video/link">
+                    <br>
+                    <button type="submit" class="btn">Search</button>
+
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="wrapper2">
+                <h1>Everest Media Downloader</h1>
+                <P>
+                    By Using this media downloader you can easily get Youtube videos in mp4(video) mp3 (audio) files
+                    for free - this servcie works for computers, tablets and mobile devices
+                   
+                    The videos/audios are always converted in the highest available quality. Please note that we can only
+                    convert videos up to a length of 90 minutes - the limitation is necessary, so the conversion of any
+                    video will not take more than a couple of minutes.
+
+                    Our service is for free and does not require any software or registration. By using our service you
+                    are accepting our terms of use.
+
+                    To download a video/audio, copy the YouTube video URL or if you know the name of the video search for it,
+                    choose the desired format you want it to download.
+
+                    if you want to download multiple audio files go over to the create mixtape page add all the names of the songs you want,
+                    set the download path and click create mixtape.
+
+                    Enjoy! We hope you like our service.
+                </P>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Vistein payne 2021</p>
+    </footer>
+
+</body>
+
+</html>
